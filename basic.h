@@ -1,8 +1,16 @@
 #include <stdio.h>
+#include <stdlib.h>
+
+typedef struct cell
+{
+  unsigned int data;
+  struct cell *next;
+} cell_t;
 
 void swap(int *, int *);
 void print_title(char *);
 int mstrlen(char *);
+void print_matrix(int m, int n, int a[m][n]);
 
 void swap(int *a, int *b)
 {
@@ -35,4 +43,34 @@ int mstrlen(char *str)
     c = *(str + num);
   }
   return num;
+}
+
+void print_matrix(int m, int n, int a[m][n])
+{
+  int x, y;
+  for (x = 0; x <= 7 * n; x++)
+  {
+    if (x == 0)
+      printf("┏");
+    else
+      printf("-");
+  }
+  printf("┓\n");
+  for (y = 0; y < m; y++)
+  {
+    printf("┃");
+    for (x = 0; x < n; x++)
+    {
+      printf("%6d,", a[y][x]);
+    }
+    printf("┃\n");
+  }
+  for (x = 0; x <= 7 * n; x++)
+  {
+    if (x == 0)
+      printf("┗");
+    else
+      printf("-");
+  }
+  printf("┛\n");
 }
