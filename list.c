@@ -39,7 +39,7 @@ cell_t *search(cell_t *head, unsigned int data)
   return NULL;
 }
 
-int delete(cell_t *head, unsigned int data)
+int delete (cell_t *head, unsigned int data)
 {
   cell_t *p = head;
 
@@ -73,8 +73,8 @@ int main()
   printf("10:%d\n", a != NULL ? a->data : -1);
   printf("12:%d\n", b != NULL ? b->data : -1);
   print_title("delete");
-  printf("リストがない要素のdelete():%d\n", delete(head, 1));
+  printf("リストがない要素のdelete():%d\n", delete (head, 1));
   insert(head, 5);
   insert(head, 10);
-  printf("リストにある要素のdelete():%d\n", delete(head, 5));
+  printf("リストにある要素のdelete():%d\n", delete (head, 5));
 }
