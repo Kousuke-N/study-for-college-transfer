@@ -1,17 +1,12 @@
 #include "basic.h"
 
-cell_t *init()
-{
-  return (cell_t *)malloc(sizeof(cell_t));
-}
-
 cell_t *push(cell_t *top, unsigned int data)
 {
   if (top == NULL)
   {
     return NULL;
   }
-  cell_t *new_top = init();
+  cell_t *new_top = init_cell();
 
   new_top->data = data;
   new_top->next = top;
@@ -49,7 +44,7 @@ void print_stack(char *msg, cell_t *top)
 
 int main()
 {
-  cell_t *top = init();
+  cell_t *top = init_cell();
   top->next = NULL;
   top = pop(top);
   print_stack("要素がない状態でのpop", top);

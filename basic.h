@@ -8,10 +8,19 @@ typedef struct cell
   struct cell *next;
 } cell_t;
 
+cell_t *init_cell();
 void swap(int *, int *);
 void print_title(char *);
 int mstrlen(char *);
 void print_matrix(int m, int n, int a[m][n]);
+
+cell_t *init_cell()
+{
+  cell_t *cell = (cell_t *)malloc(sizeof(cell_t));
+  cell->next = NULL;
+  cell->data = 0;
+  return cell;
+}
 
 void swap(int *a, int *b)
 {

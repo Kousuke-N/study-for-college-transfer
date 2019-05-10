@@ -1,13 +1,8 @@
 #include "basic.h"
 
-cell_t *init()
-{
-  return (cell_t *)malloc(sizeof(cell_t));
-}
-
 void insert(cell_t *p, unsigned int data)
 {
-  cell_t *next = init();
+  cell_t *next = init_cell();
   next->data = data;
   next->next = p->next;
   p->next = next;
@@ -57,8 +52,8 @@ int delete (cell_t *head, unsigned int data)
 
 int main()
 {
-  print_title("init");
-  cell_t *head = init();
+  print_title("init_cell");
+  cell_t *head = init_cell();
   head->next = NULL;
   print_title("insert");
   insert(head, 0);
